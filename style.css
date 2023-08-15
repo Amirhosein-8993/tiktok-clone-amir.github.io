@@ -1,0 +1,330 @@
+  * {
+      margin: 0;
+      box-sizing: border-box;
+    }
+    .heart1,
+    .heart2,
+    .heart3,
+    .heart4,
+    .heart {
+    position: relative;
+    height: 23px;
+    width: 23px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border-radius: 0 0 0 10px;
+    transform: rotate(-45deg);
+    cursor: pointer;
+    }
+    .heart1.fill-color,
+    .heart2.fill-color,
+    .heart3.fill-color,
+    .heart4.fill-color,
+    .heart.fill-color {
+      background-color: #ff2727;
+    }
+    .heart1::before,
+    .heart2::before,
+    .heart3::before,
+    .heart4::before,
+    .heart::before {
+      position: absolute;
+      content: "";
+      top: -50%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: inherit;
+      border-radius: 50%;
+    }
+    .heart1::after,
+    .heart2::after,
+    .heart3::after,
+    .heart4::after,
+    .heart::after {
+      position: absolute;
+      content: "";
+      right: -50%;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: inherit;
+      border-radius: 50%;
+    }
+    .animation-heart1,
+    .animation-heart2,
+    .animation-heart3,
+    .animation-heart4,
+    .animation-heart {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 23px;
+      height: 23px;
+      bottom: 238px;
+      background: #ff2727;
+      transform: rotate(-45deg);
+      border-radius: 0 0 0 10px;
+      cursor: pointer;
+      visibility: hidden;
+    }
+    .animation-heart1 .animation,
+    .animation-heart2 .animation,
+    .animation-heart3 .animation,
+    .animation-heart4 .animation,
+    .animation-heart .animation {
+      animation: popup .8s linear;
+      visibility: visible;
+    }
+    .animation-heart1::after,
+    .animation-heart2::after,
+    .animation-heart3::after,
+    .animation-heart4::after,
+    .animation-heart::after {
+      position: absolute;
+      content: "";
+      height: 100%;
+      width: 100%;
+      top: -50%;
+      right: 0;
+      background: inherit;
+      border-radius: 50%;
+    }
+    .animation-heart1::before,
+    .animation-heart2::before,
+    .animation-heart3::before,
+    .animation-heart4::before,
+    .animation-heart::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: -50%;
+    background: inherit;
+    border-radius: 50%;
+    }
+    html {
+      scroll-snap-type: y mandatory;
+    }
+    
+    body {
+      color: white;
+      background-color: black;
+      height: 100vh;
+      display: grid;
+      place-items: center;
+    }
+    
+    .app__videos {
+      position: relative;
+      height: 750px;
+      background-color: white;
+      overflow: scroll;
+      width: 100%;
+      max-width: 400px;
+      scroll-snap-type: y mandatory;
+      border-radius: 20px;
+    }
+    
+    .app__videos::-webkit-scrollbar {
+      display: none;
+    }
+    
+    .app__videos {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    
+    .video {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      background-color: white;
+      scroll-snap-align: start;
+    }
+
+    .video__player {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .videoSidebar {
+      position: absolute;
+      top: 48%;
+      right: 10px;
+    }
+    
+    .videoSidebar .material-icons {
+      font-size: 28px;
+      cursor: pointer;
+    }
+    
+    .videoSidebar__button {
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .videoFooter {
+      position: relative;
+      bottom: 150px;
+      margin-left: 20px;
+      color: white;
+      display: flex;
+    }
+    
+    @keyframes spinTheRecord {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    
+    .videoFooter__record {
+      animation: spinTheRecord infinite 5s linear;
+      height: 50px;
+      filter: invert(1);
+      position: absolute;
+      bottom: 0;
+      right: 20px;
+    }
+    
+    .videoFooter__text {
+      flex: 1;
+    }
+    
+    .videoFooter__text h3 {
+      padding-bottom: 20px;
+    }
+    
+    .videoFooter__icon {
+      position: absolute;
+    }
+    
+    .videoFooter__ticker {
+      width: 400px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .videoFooter__ticker marquee {
+      height: fit-content;
+      margin-left: 30px;
+      width: 60%;
+    }
+    
+    .videoFooter__description {
+      padding-bottom: 20px;
+    }
+    
+    @media (max-width: 425px) {
+      .app__videos {
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        border-radius: 0;
+      }
+    }
+    .text {
+      margin-top: 5px;
+    }
+    .bg{
+      display:flex;
+  align-items:center;
+  justify-content:center;
+    }
+    .wrapper {
+      width: 200px;
+      height: 60px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .circle {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      border-radius: 50%;
+      background-color: #fff;
+      left: 15%;
+      transform-origin: 50%;
+      animation: circle7124 .5s alternate infinite ease;
+    }
+    
+    @keyframes circle7124 {
+      0% {
+        top: 60px;
+        height: 5px;
+        border-radius: 50px 50px 25px 25px;
+        transform: scaleX(1.7);
+      }
+    
+      40% {
+        height: 20px;
+        border-radius: 50%;
+        transform: scaleX(1);
+      }
+    
+      100% {
+        top: 0%;
+      }
+    }
+    
+    .circle:nth-child(2) {
+      left: 45%;
+      animation-delay: .2s;
+    }
+    
+    .circle:nth-child(3) {
+      left: auto;
+      right: 15%;
+      animation-delay: .3s;
+    }
+    
+    .shadow {
+      width: 20px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: rgba(0,0,0,0.9);
+      position: absolute;
+      top: 62px;
+      transform-origin: 50%;
+      z-index: -1;
+      left: 15%;
+      filter: blur(1px);
+      animation: shadow046 .5s alternate infinite ease;
+    }
+    
+    @keyframes shadow046 {
+      0% {
+        transform: scaleX(1.5);
+      }
+    
+      40% {
+        transform: scaleX(1);
+        opacity: .7;
+      }
+    
+      100% {
+        transform: scaleX(.2);
+        opacity: .4;
+      }
+    }
+    
+    .shadow:nth-child(4) {
+      left: 45%;
+      animation-delay: .2s
+    }
+    
+    .shadow:nth-child(5) {
+      left: auto;
+      right: 15%;
+      animation-delay: .3s;
+    }
+    
